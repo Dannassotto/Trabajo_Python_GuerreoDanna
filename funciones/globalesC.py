@@ -14,6 +14,6 @@ def pausar_pantalla():
     else:
         system("pause")
 
-ventan = {
-    "data_ventas": {}
+compran = {
+    "data_compras": {}
 }

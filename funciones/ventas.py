@@ -1,3 +1,6 @@
+import modules.ventass as mv
+import funciones.globales as fg
+
 def ventas(op=0):
     title = """
     *****************
@@ -20,6 +23,19 @@ def ventas(op=0):
             'nombreE': nombreE,
             'cargoE': cargoE
         }
+        
+        mv.AddData('data_ventas', nombreC, ventass)
+        
+        if 'data_ventas' not in fg.ventan:
+            fg.ventan['data_ventas'] = {}
+        fg.ventan['data_ventas'][nombreC] = ventass
+        
+        if input("¿Desea registrar otra venta? S(si) o Enter(no): ").strip().lower() == 's':
+            ventas()
+    
     except ValueError as e:
         print(f'Opción no válida: {e}')
         ventas(op)
+
+if __name__ == "__main__":
+    ventas()

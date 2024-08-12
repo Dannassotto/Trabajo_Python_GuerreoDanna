@@ -4,7 +4,6 @@ import sys
 def borrar_pantalla():
     if sys.platform in ["linux", "darwin"]:
         system("clear")
-        
     else:
         system("cls")
 
