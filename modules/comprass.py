@@ -1,19 +1,19 @@
 import json
 import os
 
-MY_VENTAS = "data_ventas.json"
+MY_COMPRAS = "data_compras.json"
 
 def NewFile(data):
-    with open(MY_VENTAS, "w") as wf:
+    with open(MY_COMPRAS, "w") as wf:
         json.dump(data, wf, indent=4)
 
 def updateFile(data):
-    with open(MY_VENTAS, 'w') as fw:
+    with open(MY_COMPRAS, 'w') as fw:
         json.dump(data, fw, indent=4)
 
 def AddData(category, key, data):
-    if os.path.isfile(MY_VENTAS):
-        with open(MY_VENTAS, "r+") as file:
+    if os.path.isfile(MY_COMPRAS):
+        with open(MY_COMPRAS, "r+") as file:
             file_data = json.load(file)
             if category in file_data:
                 file_data[category][key] = data
@@ -26,8 +26,8 @@ def AddData(category, key, data):
         NewFile(file_data)
 
 def ReadFile():
-    if os.path.isfile(MY_VENTAS):
-        with open(MY_VENTAS, "r") as file:
+    if os.path.isfile(MY_COMPRAS):
+        with open(MY_COMPRAS, "r") as file:
             return json.load(file)
     else:
         return {}
