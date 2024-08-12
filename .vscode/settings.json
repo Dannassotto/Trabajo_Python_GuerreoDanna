@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "se creo el archivo de informes sobre la informaciónde la panaderia "
+        "se creo el archivo de informes sobre la informaciónde la panaderia ",
+        "se creo un menu principal para manejar con mayor facilidad el programa"
     ]
 }
